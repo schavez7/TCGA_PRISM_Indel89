@@ -1,88 +1,211 @@
-/* ===== Variables de couleurs ===== */
-/* On définit tes couleurs une fois ici, puis on les réutilise partout */
+/* ===== Palette minimale ===== */
 :root {
-  --vert-clair: #C4D6B0;
-  --beige: #F2F3D9;
-  --mauve-gris: #A69CAC;
-  --violet-fonce: #4E0250;
-  --vert-fonce: #415D43;
-  --presque-noir: #111D13;
+  --noir: #111111;
+  --gris: #6B6B6B;
+  --gris-clair: #EDEDED;
+  --blanc: #FFFFFF;
+  --accent: #8e34bb;   /* un seul accent : bleu vif. Change-le ici. */
 }
 
-/* ===== Base de la page ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: Didot, URW Palladio L, serif; 
-    line-height: 1.6;
-    color: var(--presque-noir);
-    background-color: var(--vert-clair);
-    margin: 0;
-    padding: 0;
+  font-family: Didot, "URW Palladio L", Georgia, serif;
+  line-height: 1.7;
+  color: var(--noir);
+  margin: 0;
+  padding: 0;
+  background: var(--blanc);
+  overflow-x: hidden;
 }
 
-/* ===== En-téte ===== */
+/* ===== En-tête ===== */
 header {
-    background-color: var(--violet-fonce);
-    color: var(--vert-clair);
-    padding: 10px 50px; /* padding on top-bottom, padding on the sides */
-    text-align: center;
+  padding: 120px 40px 70px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 header h1 {
-    margin: 0 0 10px 0; /* 3rd is padding on top-bottom? */
+  margin: 25px 0 24px 0;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--noir);
+  animation: fade 1s ease both;
+
 }
 
 header p {
-    margin: 20px;
-    color: var(--mauve-gris);
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--gris);
+  animation: fade 1s ease 0.15s both;
 }
 
-/* ===== Navigation ===== */ 
+@keyframes fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* petit trait d'accent sous le titre */
+header::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+  margin: 32px auto 0;
+  animation: grow 1s ease 0.4s both;
+}
+
+@keyframes grow {
+  from { width: 0; opacity: 0; }
+  to { width: 50px; opacity: 1; }
+}
+
+/* ===== Navigation ===== */
 nav {
-    background-color: var(--presque-noir);
-    text-align: center;
-    padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--gris-clair);
 }
 
 nav a {
-    color: var(--vert-clair);
-    text-decoration: none;
-    margin: 0 50px; /* espace entre les noms */
-    font-weight: bold;
+  position: relative;
+  color: var(--noir);
+  text-decoration: none;
+  margin: 0 28px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--violet-fonce);
+nav a:hover { color: var(--accent); }
+
+/* ===== Contenu ===== */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 90px 20px 40px;
 }
 
-
-/* ===== Contenu principal ===== */ 
-main { 
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px 20px;
+section {
+  padding: 0 0 70px;
+  margin-bottom: 70px;
+  border-bottom: 1px solid var(--gris-clair);
+  opacity: 1;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-section { 
-    background-color: var(--mauve-gris);
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 5px rbga(0,0,0,0.1); 
-}
+section:last-child { border-bottom: none; }
+section.visible { opacity: 1; transform: translateY(0); }
 
 section h2 {
-    color: var(--violet-fonce);
-    border-bottom: 2px solid var(--vert-clair);
-    padding-bottom: 5px;
+  margin: 0 0 20px 0;
+  font-size: 1.7rem;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  color: var(--noir);
+}
+
+/* petit repère d'accent avant chaque titre */
+section h2::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+section p {
+  margin: 0;
+  color: var(--gris);
+  font-size: 1.12rem;
+}
+
+/* ===== Grille de cancers (page d'accueil) ===== */
+.grille-cancers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.carte-cancer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 12px;
+  text-decoration: none;
+  color: var(--noir);
+  font-size: 1.3rem;
+  border: 1px solid var(--gris-clair);
+  border-radius: 8px;
+  transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.carte-cancer span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+
+.carte-cancer:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.comparaison {
+  margin: 20px auto; 
+  border-collapse: collapse;
+}
+
+.comparaison th {
+  padding: 12px 24px;
+  text-align: center;
+  color: (--noir);
+  font-weight: bold;
+  border-bottom: 1px solid var(--accent);
+}
+
+.comparaison td {
+  padding: 12px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--gris-clair);
+}
+
+.comparaison .sig {
+  font-weight: bold;
+}
+
+.comparaison .oui {
+  color: var(--accent);
+  font-weight: bold;
 }
 
 
 /* ===== Pied de page ===== */
 footer {
-  background-color: var(--presque-noir);
-  color: var(--vert-clair);
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
+  color: var(--gris);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--gris-clair);
 }
-
-

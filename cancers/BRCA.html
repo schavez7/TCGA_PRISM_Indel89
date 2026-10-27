@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRCA — Signatures mutationnelles</title>
+  <!-- ../ remonte d'un dossier car ce fichier est dans cancers/ -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <!-- Lien retour vers l'accueil -->
+    <p class="retour"><a href="../index.html">← Retour à l'accueil</a></p>
+    <h1>BRCA</h1>
+    <p>Cancer du sein — signatures mutationnelles</p>
+    <p>Analysis based on SigProfilerExtractor</p>
+  </header>
+
+  <nav>
+    <a href="#summary">Experiment notes</a>
+    <a href="#signal">Compare signatures to Signal</a>
+    <a href="#signatures">Raw signatures found</a>
+    <a href="#denovo"><em>dē novō</em> signatures</a>
+    <!-- Ajoute un lien par méthode quand tu en auras d'autres -->
+  </nav>
+
+  <main>
+
+    <!-- ===================== Summary of experiment ===================== -->
+    <section id="summary">
+        <h2>Experiment notes</h2>
+        <p>In this experiment, the TCGA\PRISM data was separated into three groups:</p>
+        <table class="comparaison">
+            <thead>
+                <tr>
+                    <th>Cohort 1</th>
+                    <th>Cohort 2</th>
+                    <th>Cohort 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TCGA only</td>
+                    <td>PRISM w/ no TCGA</td>
+                    <td>All samples</td>
+                </tr>
+                <tr>
+                    <td>951 samples</td>
+                    <td>356 samples</td>
+                    <td>1126 samples?</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Each vcf.gz file was combed and reduced to the insertions/delections (InDel) mutations.
+            Then each was transformed into a vector via the InDel taxonomy with 89 categories. The 
+            resulting matrix for each cohort was analysed by the standard NMF algorithm w/ KL 
+            divergence "metric" provided by SigProfilerExtractor. 
+        </p>
+    </section>
+
+    <!-- ===================== Signatures trouver par Sigal ===================== -->
+    <section id="signal">
+      <h2>Compare signatures to Signal</h2>
+      <p>The analysis provided by the Serena group produced InDel-89 signaures in order of influence:</p>
+      <table class="comparaison">
+        <thead>
+            <tr>
+                <th>Signature name</th>
+                <th>Signal</th>
+                <th>TCGA</th>
+                <th>PRISM\TCGA</th>
+                <th>BOTH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sig">InD1</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD4d</td>
+                <td>✓</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD4c</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD9</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td> </td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD8</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD2a</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD11</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD6</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD7</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+                <td class="sig">InD17</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD30</td>
+                <td>✓</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD19</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD14</td>
+                <td> </td>
+                <td>✓</td>
+                <td> </td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD15</td>
+                <td> </td>
+                <td>✓</td>
+                <td> </td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td class="sig">InD4b</td>
+                <td> </td>
+                <td> </td>
+                <td>✓</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig">InD9b</td>
+                <td> </td>
+                <td> </td>
+                <td>✓</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td class="sig"><em>dē novō</em></td>
+                <td> </td>
+                <td>✓</td>
+                <td> </td>
+                <td>✓</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===================== MÉTHODE : SigProfilerExtractor ===================== -->
+    <section id="signatures">
+      <h2>SigProfilerExtractor</h2>
+
+      <!-- ---------- Groupe 1 ---------- -->
+      <h3 class="groupe">Groupe 1 — [TCGA]</h3>
+      <div class="galerie">
+        <figure>
+          <img src="../images/sigprofiler/BRCA/groupe1/signature_SBS96.png"
+               alt="Signature SBS96 — BRCA groupe 1" loading="lazy">
+          <figcaption>SBS96</figcaption>
+        </figure>
+        <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
+      </div>
+
+      <!-- ---------- Groupe 2 ---------- -->
+      <h3 class="groupe">Groupe 2 — [PRISM\TCGA]</h3>
+      <div class="galerie">
+        <figure>
+          <img src="../images/sigprofiler/BRCA/groupe2/signature_SBS96.png"
+               alt="Signature SBS96 — BRCA groupe 2" loading="lazy">
+          <figcaption>SBS96</figcaption>
+        </figure>
+      </div>
+
+      <!-- ---------- Groupe 3 ---------- -->
+      <h3 class="groupe">Groupe 3 — [BOTH]</h3>
+      <div class="galerie">
+        <figure>
+          <img src="../images/sigprofiler/BRCA/groupe3/signature_SBS96.png"
+               alt="Signature SBS96 — BRCA groupe 3" loading="lazy">
+          <figcaption>SBS96</figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- ===================== dē novō signatures ===================== -->
+    <section id="denovo">
+        <h2><em>dē novō</em> signatures</h2>
+        <p></p>
+        <h3 class="groupe">Groupe 1 — [TCGA]</h3>
+            <div class="galerie">
+                <figure>
+                <img src="BRCA_figures/TCGA_BRCA_denovo.pdf"
+                    alt="Signature — BRCA groupe 1" loading="lazy">
+                <figcaption>N here is simply the sum of all the values of each column.
+                    Normally, this is count data not percentage, and N would indicate 
+                    the number of mutations in a genome. 
+                </figcaption>
+                </figure>
+                <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
+            </div>
+        </h3>
+        <h3 class="groupe">Groupe 3 — [BTOH]</h3>
+            <div class="galerie">
+                <figure>
+                <img src="BRCA_figures/BOTH_BRCA_denovo.pdf"
+                    alt="Signature — BRCA groupe 1" loading="lazy">
+                <figcaption>Interesting that both of these look very similar.</figcaption>
+                </figure>
+                <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
+            </div>
+        </h3>
+    </section>
+
+    <!-- Pour une autre méthode, copie toute la <section> ci-dessus,
+         change l'id, le <h2>, et le dossier dans les chemins d'images -->
+
+  </main>
+
+  <footer>
+    <p>Projet d'analyse de signatures mutationnelles</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body> 
+</html>
