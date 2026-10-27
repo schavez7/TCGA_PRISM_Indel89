@@ -1,0 +1,88 @@
+/* ===== Variables de couleurs ===== */
+/* On définit tes couleurs une fois ici, puis on les réutilise partout */
+:root {
+  --vert-clair: #C4D6B0;
+  --beige: #F2F3D9;
+  --mauve-gris: #A69CAC;
+  --violet-fonce: #4E0250;
+  --vert-fonce: #415D43;
+  --presque-noir: #111D13;
+}
+
+/* ===== Base de la page ===== */
+body {
+    font-family: Didot, URW Palladio L, serif; 
+    line-height: 1.6;
+    color: var(--presque-noir);
+    background-color: var(--vert-clair);
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== En-téte ===== */
+header {
+    background-color: var(--violet-fonce);
+    color: var(--vert-clair);
+    padding: 10px 50px; /* padding on top-bottom, padding on the sides */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* 3rd is padding on top-bottom? */
+}
+
+header p {
+    margin: 20px;
+    color: var(--mauve-gris);
+}
+
+/* ===== Navigation ===== */ 
+nav {
+    background-color: var(--presque-noir);
+    text-align: center;
+    padding: 15px 20px;
+}
+
+nav a {
+    color: var(--vert-clair);
+    text-decoration: none;
+    margin: 0 50px; /* espace entre les noms */
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--violet-fonce);
+}
+
+
+/* ===== Contenu principal ===== */ 
+main { 
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+section { 
+    background-color: var(--mauve-gris);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rbga(0,0,0,0.1); 
+}
+
+section h2 {
+    color: var(--violet-fonce);
+    border-bottom: 2px solid var(--vert-clair);
+    padding-bottom: 5px;
+}
+
+
+/* ===== Pied de page ===== */
+footer {
+  background-color: var(--presque-noir);
+  color: var(--vert-clair);
+  text-align: center;
+  padding: 20px;
+}
+
+
