@@ -22,7 +22,7 @@ body {
 
 /* ===== En-tête ===== */
 header {
-  padding: 120px 40px 70px;
+  padding: 40px 40px 70px;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
@@ -76,7 +76,7 @@ nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid var(--gris-clair);
 }
 
@@ -94,7 +94,8 @@ nav a:hover { color: var(--accent); }
 
 /* ===== Contenu ===== */
 main {
-  max-width: 760px;
+  /* max-width: 760px; */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 90px 20px 40px;
 }
@@ -137,6 +138,35 @@ section p {
   font-size: 1.12rem;
 }
 
+/* ===== options menu ===== */
+.menu {
+  position: relative;
+}
+
+.sous-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blanc);
+  border: 1px solid var(--gris-clair);
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.menu:hover .sous-menu {
+  display: block;
+}
+
+.sous-menu a {
+  display: block;
+  margin: 0;
+  padding: 8px 20px;
+}
+
 /* ===== Grille de cancers (page d'accueil) ===== */
 .grille-cancers {
   display: grid;
@@ -170,6 +200,12 @@ section p {
   border-color: var(--accent);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.grand-plot {
+  max-width: 2000px;
+  width: 100%;
+  height: auto;
 }
 
 .comparaison {
