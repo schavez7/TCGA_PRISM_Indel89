@@ -170,7 +170,7 @@ section p {
 /* ===== Grille de cancers (page d'accueil) ===== */
 .grille-cancers {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 16px;
   margin-top: 28px;
 }
@@ -194,6 +194,7 @@ section p {
   margin-top: 6px;
   font-size: 0.85rem;
   color: var(--gris);
+  text-align: center; 
 }
 
 .carte-cancer:hover {
