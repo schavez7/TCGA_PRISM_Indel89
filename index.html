@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Analyses of TCGA/PRISM data sets via Signal's InD-89</h1>
-    <p>Résultats de différentes méthodes d'extraction</p>
+    <p>Résultats de différentes méthodes d'extraction: SigProfilerExtractor, </p>
   </header>
   <nav>
     <a href="#apropos">À propos</a>
@@ -17,12 +17,12 @@
     <a href="#denovosigs"><em>dē novō</em> Signatures</a> 
   </nav>
   <main>
-    <section id="apropos"> 
+    <section id="apropos" style="--lettre: '𐤀'"> 
       <h2>À propos</h2>
       <p>Ce site présente les signatures mutationnelles extraites pour une vingtaine de types de cancer. Sélectionne un cancer ci-dessous pour voir ses résultats, organisés par méthode et par groupe d'ensembles de données.</p>
     </section>
 
-    <section id="cancers">
+    <section id="cancers" style="--lettre: '𐤁'">
       <h2>Types de cancer</h2>
       <p>Clique sur un cancer pour accéder à ses résultats.</p>
       <div class="grille-cancers">
@@ -36,7 +36,7 @@
         <a class="carte-cancer" href="cancers/ESCA.html">ESCA<span>Esophageal Carcinoma</span></a>
         <a class="carte-cancer" href="cancers/GBM.html">GBM<span>Glioblastome Multiforme</span></a>
         <a class="carte-cancer" href="cancers/HNSC.html">HNSC<span>Head and Neck Squamous Cell Carcinoma</span></a>
-        <a class="carte-cancer" href="cancers/KICH.html">KICH<span>Kidney Crhomophobe</span></a>
+        <a class="carte-cancer" href="cancers/KICH.html">KICH<span>Kidney Chromophobe</span></a>
         <a class="carte-cancer" href="cancers/KIRC.html">KIRC<span>Kidney Renal Clear Cell Carcinoma</span></a>
         <a class="carte-cancer" href="cancers/KIRP.html">KIRP<span>Kidney Renal Papillary Cell Carcinoma</span></a>
         <a class="carte-cancer" href="cancers/LAML.html">LAML<span>Acute Myeloid Leukemia</span></a>
@@ -62,31 +62,141 @@
       </div>
     </section>
 
-    <section id="denovosigs">
+    <section id="denovosigs" style="--lettre: '𐤂'">
       <h2>Possible <em>dē novō</em> Signatures</h2>
       <p>
         These are the <em>dē novō</em> signatures collected from all the cancer analyses that could not be 
-        properly decomposed as a conic combination of those in the Signal catalogue. 
+        properly decomposed as a conic combination of those in the Signal catalogue. The TCGA or PRISM 
+        within parentheses indicates that it was found in TCGA set, PRISM set or in BOTH set.  
       </p>
       <h3 class="groupe">
         <div class="galerie">
           <figure>
-            <figcaption>From BRCA</figcaption>
+            <figcaption>From BRCA (TCGA only and PRISM only, but not in BOTH)</figcaption>
             <img src="cancers/BRCA_figures/TCGA_BRCA_denovo.pdf"
                  class="grand-plot"
                  alt="de novo signature from BRCA" loading="lazy">
           </figure>
           <figure>
-            <figcaption>From UCEC</figcaption>
+            <figcaption>From ESCA (TCGA)</figcaption>
+            <img src="cancers/ESCA_figures/TCGA_ESCA_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from ESCA" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From GBM (TCGA)</figcaption>
+            <img src="cancers/GBM_figures/TCGA_GBM_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from GBM" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From GBM (BOTH)</figcaption>
+            <img src="cancers/GBM_figures/BOTH_GBM_denovo_1of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from GBM" loading="lazy">
+          </figure>
+          <figure>
+            <img src="cancers/GBM_figures/BOTH_GBM_denovo_2of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from GBM" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From HNSC (TCGA)</figcaption>
+            <img src="cancers/HNSC_figures/TCGA_HNSC_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from HNSC" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From HNSC (PRISM)</figcaption>
+            <img src="cancers/HNSC_figures/PRISM_HNSC_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from HNSC" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From KICH (TCGA)</figcaption>
+            <img src="cancers/KICH_figures/TCGA_KICH_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from KICH" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From LAML (TCGA)</figcaption>
+            <img src="cancers/LAML_figures/TCGA_LAML_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LAML" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From LAML (PRISM)</figcaption>
+            <img src="cancers/LAML_figures/PRISM_LAML_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LAML" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From LAML (BOTH)</figcaption>
+            <img src="cancers/LAML_figures/BOTH_LAML_denovo_1of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LAML" loading="lazy">
+          </figure>
+          <figure>
+            <img src="cancers/LAML_figures/BOTH_LAML_denovo_2of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LAML" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From LIHC (TCGA)</figcaption>
+            <img src="cancers/LIHC_figures/TCGA_LIHC_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LIHC" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From LGG (TCGA)</figcaption>
+            <img src="cancers/LGG_figures/TCGA_LGG_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from LGG" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From SKCM (TCGA)</figcaption>
+            <img src="cancers/SKCM_figures/TCGA_SKCM_denovo.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From SKCM (PRISM)</figcaption>
+            <img src="cancers/SKCM_figures/PRISM_SKCM_denovo_1of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <img src="cancers/SKCM_figures/PRISM_SKCM_denovo_2of2.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From SKCM (BOTH)</figcaption>
+            <img src="cancers/SKCM_figures/BOTH_SKCM_denovo_1of3.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <img src="cancers/SKCM_figures/BOTH_SKCM_denovo_2of3.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <img src="cancers/SKCM_figures/BOTH_SKCM_denovo_3of3.pdf"
+                 class="grand-plot"
+                 alt="de novo signature from SKCM" loading="lazy">
+          </figure>
+          <figure>
+            <figcaption>From UCEC (TCGA)</figcaption>
             <img src="cancers/UCEC_figures/TCGA_UCEC_denovo_1of2.pdf"
                  class="grand-plot"
-                 alt="de novo signature from BRCA" loading="lazy">
+                 alt="de novo signature from UCEC" loading="lazy">
           </figure>
           <figure>
             <!-- <figcaption>From UCEC</figcaption> -->
             <img src="cancers/UCEC_figures/TCGA_UCEC_denovo_2of2.pdf"
                  class="grand-plot"
-                 alt="de novo signature from BRCA" loading="lazy">
+                 alt="de novo signature from UCEC" loading="lazy">
           </figure>
         </div>
       </h3>
