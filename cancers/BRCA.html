@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRCA — Signatures mutationnelles</title>
+  <title>BRCA</title>
   <!-- ../ remonte d'un dossier car ce fichier est dans cancers/ -->
   <link rel="stylesheet" href="../style.css">
+  <!-- <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script> -->
 </head>
 <body>
   <header>
@@ -20,7 +21,8 @@
     <a href="../index.html">← Retour à l'accueil</a>
     <a href="#summary">Experiment notes</a>
     <a href="#signal">Compare signatures to Signal</a>
-    <a href="#denovo"><em>dē novō</em> signatures</a> 
+    <a href="#denovo"><em>dē novō</em> signatures</a>
+    <!-- <a href="#genomes">Genome decomposition</a> -->
     <span class="menu">
       <a href="#signatures">Raw signatures found</a>
       <span class="sous-menu">
@@ -48,14 +50,14 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>PRISM</td>
                     <td>TCGA only</td>
-                    <td>PRISM w/ no TCGA</td>
-                    <td>All samples</td>
+                    <td>PRISM sans TCGA</td>
                 </tr>
                 <tr>
+                    <td>1126 samples</td>
                     <td>951 samples</td>
                     <td>178 samples</td>
-                    <td>1126 samples?</td>
                 </tr>
             </tbody>
         </table>
@@ -63,7 +65,8 @@
             Each vcf.gz file was combed and reduced to the insertions/delections (InDel) mutations.
             Then each was transformed into a vector via the InDel taxonomy with 89 categories. The 
             resulting matrix for each cohort was analysed by the standard NMF algorithm w/ KL 
-            divergence "metric" provided by SigProfilerExtractor. 
+            divergence "metric" provided by SigProfilerExtractor. There are genomes that could not 
+            be decomposed based on this reference of catalgues and, thus, were omitted.
         </p>
     </section>
 
@@ -391,6 +394,17 @@
         </figure>
       </div>
 
+    </section>
+
+    <section id="genome" style="--lettre: '𐤄'">
+        <h2>Genome decompositions</h2>
+        <p>   
+            Each of these genomes below is a reconstruction based on the <em>extended</em> 
+            Signal signature catalogues. The cosine similarity number found therein is how 
+            similar the original genome is to the reconstructed genome. 
+        </p>
+        <iframe src="../InteractiveFigures/BRCA_genome_decomp.html" 
+                width="100%" height="800" style="border:none;"></iframe>
     </section>
 
   </main>

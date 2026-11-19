@@ -3,4 +3,7 @@ document.querySelectorAll('.comparaison td').forEach(cell => {
   if (cell.textContent.trim() === '✓') {
     cell.classList.add('oui');
   }
+  if (cell.textContent.trim() === '✓✓') {
+    cell.classList.add('oui');
+  }
 });
