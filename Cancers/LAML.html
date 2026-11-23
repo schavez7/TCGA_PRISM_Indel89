@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> LAML — Signatures mutationnelles</title>
+  <!-- ../ remonte d'un dossier car ce fichier est dans cancers/ -->
+  <link rel="stylesheet" href="../style.css">
+</head> 
+<body>
+  <header>
+    <!-- Lien retour vers l'accueil -->
+    <!-- <p class="retour"><a href="../index.html">← Retour à l'accueil</a></p> -->
+    <h1>LAML</h1>
+    <p>descriptioncancer — signatures mutationnelles</p>
+    <p>Analysis based on SigProfilerExtractor</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">← Retour à l'accueil</a>
+    <a href="#summary">Summary</a>
+    <a href="#decompose">Compare to Signal</a>
+    <a href="#genome">Genome decomposition</a>
+  
+    <!-- Ajoute un lien par méthode quand tu en auras d'autres -->
+  </nav>
+
+  <main>
+
+    <!-- ===================== Summary of experiment ===================== -->
+    <section id="summary" style="--lettre: '𐤀'">
+        <h2>Experiment notes</h2>
+        <p>In this experiment, PRISM data...</p>
+        <table class="comparaison">
+            <thead>
+                <tr>
+                    <th>Cohort 1</th>
+                    <th>Cohort 2</th>
+                    <th>Cohort 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>All samples</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>108 génomes</td>
+                    <td>? génomes</td>
+                    <td>? génomes</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Each vcf.gz file was combed and reduced to the insertions/delections (InDel) mutations.
+            Then each was transformed into a vector via the InDel taxonomy with 89 categories. The 
+            resulting matrix for each cohort was analysed by the standard NMF algorithm w/ KL 
+            divergence "metric" provided by SigProfilerExtractor. 
+        </p>
+    </section>
+
+    <!-- ===================== SigProfilerExtractor ===================== -->
+    <section id="decompose" style="--lettre: '𐤁'">
+      <h2>Signatures found via SigProfilerExtractor</h2>
+      <p>   
+        These are the signature found by SigProfilerExtractor that can be decomposed as 
+        conic combination of the reference signatures of the Signal catalogue. The top 
+        left is the original raw found signature by SigProfilerExtractor, and the one 
+        below it is the recontruction based on the decomposition--the Signal signatures 
+        on the right side. 
+      </p>
+      <!-- ---------- Groupe 1 ---------- -->
+      <h3 class="groupe" id="raw-g1">Groupe — [PRISM]</h3>
+      <div class="galerie">
+        <figure>
+          <figcaption>Found InDel signature A</figcaption>
+          <img src="LAML_figures/PRISM_CH89A_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — LAML (A)" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption>Found InDel signature B</figcaption>
+          <img src="LAML_figures/PRISM_CH89B_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — LAML (B)" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption>Found InDel signature C</figcaption>
+          <img src="LAML_figures/PRISM_CH89C_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — LAML (C)" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption>Found InDel signature D</figcaption>
+          <img src="LAML_figures/PRISM_CH89D_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — LAML (D)" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption>Found InDel signature E</figcaption>
+          <img src="LAML_figures/PRISM_CH89E_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — LAML (E)" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- ---------- Groupe 2 ---------- -->
+      <h3 class="groupe" id="raw-g2">Heatmap against Signal catalogue </h3>
+      <div class="galerie">
+        <figure>
+          <img src="LAML_figures/PRISM_CosineSimilarity_Heatmap.pdf"
+               class="grand-plot"
+               alt="Heatmap" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- ---------- Groupe 3 ----------
+      <h3 class="groupe" id="raw-g3">Groupe 3 — [BOTH]</h3>
+      <div class="galerie">
+        <figure>
+          <figcaption>Found InDel signature A</figcaption>
+          <img src="Whose_figures/BOTH_Whose_CH89A_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — BRCA groupe 3" loading="lazy">
+        </figure>
+      </div> -->
+
+    </section>
+
+    <!-- ===================== Genome decomposition ===================== -->
+    <section id="genome" style="--lettre: '𐤂'">
+      <h2>Genome decompositions</h2>
+      <p>   
+          Each of these genomes below is a reconstruction based on the <em>extended</em> 
+          Signal signature catalogues. The cosine similarity number found therein is how 
+          similar the original genome is to the reconstructed genome. There are genomes that could not 
+            be decomposed based on this reference of catalgues and, thus, were omitted.
+      </p>
+      <iframe src="../InteractiveFigures/genome_decomp_LAML.html" 
+              width="100%" height="800" style="border:none;"></iframe>
+    </section>
+
+  </main> 
+
+  <footer>
+    <p>Projet d'analyse de signatures mutationnelles</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body> 
+</html>
