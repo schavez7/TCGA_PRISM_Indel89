@@ -6,29 +6,23 @@
   <title> HNSC — Signatures mutationnelles</title>
   <!-- ../ remonte d'un dossier car ce fichier est dans cancers/ -->
   <link rel="stylesheet" href="../style.css">
-</head>
+</head> 
 <body>
   <header>
     <!-- Lien retour vers l'accueil -->
     <!-- <p class="retour"><a href="../index.html">← Retour à l'accueil</a></p> -->
     <h1>HNSC</h1>
-    <p>Head and Neck Squamous Cell Carcinoma — signatures mutationnelles</p>
+    <p>Head and neck squamous cell carcinoma — signatures mutationnelles</p>
     <p>Analysis based on SigProfilerExtractor</p>
   </header>
 
   <nav>
     <a href="../index.html">← Retour à l'accueil</a>
-    <a href="#summary">Experiment notes</a>
-    <a href="#signal">Compare signatures to Signal</a>
-    <a href="#denovo"><em>dē novō</em> signatures</a> 
-    <span class="menu">
-      <a href="#signatures">Raw signatures found</a>
-      <span class="sous-menu">
-        <a href="#raw-g1">Groupe 1 - TCGA</a>
-        <a href="#raw-g2">Groupe 2 - PRISM\TCGA</a>
-        <a href="#raw-g3">Groupe 3 - BOTH</a>
-      </span>
-    </span>
+    <a href="#summary">Summary</a>
+    <a href="#denovo"><em>dē novō</em> signatures</a>
+    <a href="#decompose">Compare to Signal</a>
+    <a href="#genome">Genome decomposition</a>
+  
     <!-- Ajoute un lien par méthode quand tu en auras d'autres -->
   </nav>
 
@@ -37,7 +31,7 @@
     <!-- ===================== Summary of experiment ===================== -->
     <section id="summary" style="--lettre: '𐤀'">
         <h2>Experiment notes</h2>
-        <p>In this experiment, the TCGA\PRISM data was separated into three groups:</p>
+        <p>In this experiment, PRISM data...</p>
         <table class="comparaison">
             <thead>
                 <tr>
@@ -48,14 +42,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>TCGA only</td>
-                    <td>PRISM w/ no TCGA</td>
                     <td>All samples</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>474 samples</td>
-                    <td>344 samples</td>
-                    <td>795 samples</td>
+                    <td>793 génomes</td>
+                    <td>? génomes</td>
+                    <td>? génomes</td>
                 </tr>
             </tbody>
         </table>
@@ -67,143 +61,6 @@
         </p>
     </section>
 
-    <!-- ===================== Signatures trouver par Sigal ===================== -->
-    <section id="signal" style="--lettre: '𐤁'">
-      <h2>Compare signatures to Signal</h2>
-      <p>The analysis provided by the Serena group produced InDel-89 signaures in order of influence:</p>
-      <table class="comparaison">
-        <thead>
-            <tr>
-                <th>Signature name</th>
-                <th>Signal</th>
-                <th>TCGA</th>
-                <th>PRISM\TCGA</th>
-                <th>BOTH</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="sig">InD1</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            <!-- <tr>
-                <td class="sig">InD4d</td>
-                <td>✓</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig">InD4c</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig">InD9</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td> </td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD8</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD2a</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD11</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD6</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD7</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-                <td class="sig">InD17</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig">InD30</td>
-                <td>✓</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig">InD19</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD14</td>
-                <td> </td>
-                <td>✓</td>
-                <td> </td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD15</td>
-                <td> </td>
-                <td>✓</td>
-                <td> </td>
-                <td>✓</td>
-            </tr>
-            <tr>
-                <td class="sig">InD4b</td>
-                <td> </td>
-                <td> </td>
-                <td>✓</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig">InD9b</td>
-                <td> </td>
-                <td> </td>
-                <td>✓</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td class="sig"><em>dē novō</em></td>
-                <td> </td>
-                <td>✓</td>
-                <td> </td>
-                <td>✓</td>
-            </tr> -->
-        </tbody>
-      </table>
-    </section>
-
     <!-- ===================== dē novō signatures ===================== -->
     <section id="denovo" style="--lettre: '𐤂'">
         <h2><em>dē novō</em> signatures</h2>
@@ -211,134 +68,101 @@
             These are the signatures uncovered by SigProfilerExtractor that are deemed 
             not part of the references catalogue from Signal. 
         </p>
-        <h3 class="groupe">Groupe 1 — [TCGA]</h3>
-            <div class="galerie">
-                <figure>
-                <img src="Whose_figures/TCGA_Whose_denovo.pdf"
-                     class="grand-plot"
-                     alt="Signature — [whose] groupe 1" loading="lazy">
-                <figcaption>N here is simply the sum of all the values of each column.
-                    Normally, this is count data not percentage, and N would indicate 
-                    the number of mutations in a genome. But this is not a genome but 
-                    rather a signature provided as a probability mass function. 
-                </figcaption>
-                </figure>
-                <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
-            </div>
-        </h3>
-        <h3 class="groupe">Groupe 3 — [BOTH]</h3>
-            <div class="galerie">
-                <figure>
-                <img src="Whose_figures/BOTH_Whose_denovo.pdf"
-                     class="grand-plot"
-                     alt="Signature — [whose] groupe 1" loading="lazy">
-                <figcaption>Interesting that both of these look very similar.</figcaption>
-                </figure>
-                <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
-            </div>
-        </h3>
+        <div class="galerie">
+            <figure>
+            <img src="HNSC_figures/PRISM_CH89D_decomposition.pdf"
+                    class="grand-plot"
+                    alt="Signature — HNSC (D)" loading="lazy">
+            </figure>
+            <figure>
+            <img src="HNSC_figures/PRISM_CH89G_decomposition.pdf"
+                    class="grand-plot"
+                    alt="Signature — HNSC (G)" loading="lazy">
+            </figure>
+            <!-- Copie le bloc <figure> ci-dessus pour chaque image du groupe -->
+        </div>
     </section>
 
-    <!-- ===================== MÉTHODE : SigProfilerExtractor ===================== -->
-    <section id="signatures" style="--lettre: '𐤃'">
-      <h2>SigProfilerExtractor found signatures</h2>
+    <!-- ===================== SigProfilerExtractor ===================== -->
+    <section id="decompose" style="--lettre: '𐤁'">
+      <h2>Signatures found via SigProfilerExtractor</h2>
       <p>   
         These are the signature found by SigProfilerExtractor that can be decomposed as 
         conic combination of the reference signatures of the Signal catalogue. The top 
         left is the original raw found signature by SigProfilerExtractor, and the one 
         below it is the recontruction based on the decomposition--the Signal signatures 
-        on the right side.
+        on the right side. 
       </p>
       <!-- ---------- Groupe 1 ---------- -->
-      <h3 class="groupe" id="raw-g1">Groupe 1 — [TCGA]</h3>
-      <p>
-        Signature CH89D is the <em>dē novō</em> signature from above.
-      </p>
+      <h3 class="groupe" id="raw-g1">Groupe — [PRISM]</h3>
       <div class="galerie">
         <figure>
           <figcaption>Found InDel signature A</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89A_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89A_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (A)" loading="lazy">
         </figure>
-        <!-- <figure>
+        <figure>
           <figcaption>Found InDel signature B</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89B_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89B_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (B)" loading="lazy">
         </figure>
         <figure>
           <figcaption>Found InDel signature C</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89C_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89C_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (C)" loading="lazy">
         </figure>
+        <p>
+          InDel signature D is the <em>dē novō</em> signature previously
+        </p>
         <figure>
           <figcaption>Found InDel signature E</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89E_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89E_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (E)" loading="lazy">
         </figure>
         <figure>
           <figcaption>Found InDel signature F</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89F_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89F_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (F)" loading="lazy">
         </figure>
-        <figure>
-          <figcaption>Found InDel signature G</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89G_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
-        </figure>
+        <p>
+          InDel signature G is the <em>dē novō</em> signature previously
+        </p>
         <figure>
           <figcaption>Found InDel signature H</figcaption>
-          <img src="Whose_figures/TCGA_Whose_CH89H_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CH89H_decomposition.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 1" loading="lazy">
+               alt="Signature — HNSC (H)" loading="lazy">
         </figure>
         <figure>
-          <img src="Whose_figures/TCGA_Whose_CosSim_Heatmap.pdf"
+          <figcaption>Found InDel signature I</figcaption>
+          <img src="HNSC_figures/PRISM_CH89I_decomposition.pdf"
                class="grand-plot"
-               alt="Heat map of signatures">
-        </figure> -->
+               alt="Signature — HNSC (I)" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption>Found InDel signature J</figcaption>
+          <img src="HNSC_figures/PRISM_CH89J_decomposition.pdf"
+               class="grand-plot"
+               alt="Signature — HNSC (J)" loading="lazy">
+        </figure>
       </div>
 
       <!-- ---------- Groupe 2 ---------- -->
-      <h3 class="groupe" id="raw-g2">Groupe 2 — [PRISM\TCGA]</h3>
+      <h3 class="groupe" id="raw-g2">Heatmap against Signal catalogue </h3>
       <div class="galerie">
         <figure>
-          <figcaption>Found InDel signature A</figcaption>
-          <img src="Whose_figures/PRISM_Whose_CH89A_decomposition.pdf"
+          <img src="HNSC_figures/PRISM_CosineSimilarity_Heatmap.pdf"
                class="grand-plot"
-               alt="Signature — BRCA groupe 2" loading="lazy">
+               alt="Heatmap" loading="lazy">
         </figure>
-        <!-- <figure>
-          <figcaption>Found InDel signature B</figcaption>
-          <img src="Whose_figures/PRISM_Whose_CH89B_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 2" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature C</figcaption>
-          <img src="Whose_figures/PRISM_Whose_CH89C_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 2" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature D</figcaption>
-          <img src="Whose_figures/PRISM_Whose_CH89D_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 2" loading="lazy">
-        </figure>
-        <figure>
-          <img src="Whose_figures/PRISM_Whose_CosSim_Heatmap.pdf"
-               class="grand-plot"
-               alt="Heat map of signatures">
-        </figure> -->
       </div>
 
-      <!-- ---------- Groupe 3 ---------- -->
+      <!-- ---------- Groupe 3 ----------
       <h3 class="groupe" id="raw-g3">Groupe 3 — [BOTH]</h3>
       <div class="galerie">
         <figure>
@@ -347,52 +171,24 @@
                class="grand-plot"
                alt="Signature — BRCA groupe 3" loading="lazy">
         </figure>
-        <!-- <figure>
-          <figcaption>Found InDel signature B</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89B_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature C</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89C_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature E</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89E_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature F</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89F_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature G</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89G_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <figcaption>Found InDel signature H</figcaption>
-          <img src="Whose_figures/BOTH_Whose_CH89H_decomposition.pdf"
-               class="grand-plot"
-               alt="Signature — BRCA groupe 3" loading="lazy">
-        </figure>
-        <figure>
-          <img src="Whose_figures/BOTH_Whose_CosSim_Heatmap.pdf"
-               class="grand-plot"
-               alt="Heat map of signatures">
-        </figure> -->
-      </div>
+      </div> -->
 
     </section>
 
-  </main>
+    <!-- ===================== Genome decomposition ===================== -->
+    <section id="genome" style="--lettre: '𐤂'">
+      <h2>Genome decompositions</h2>
+      <p>   
+          Each of these genomes below is a reconstruction based on the <em>extended</em> 
+          Signal signature catalogues. The cosine similarity number found therein is how 
+          similar the original genome is to the reconstructed genome. There are genomes that could not 
+            be decomposed based on this reference of catalgues and, thus, were omitted.
+      </p>
+      <iframe src="../InteractiveFigures/genome_decomp_HNSC.html" 
+              width="100%" height="800" style="border:none;"></iframe>
+    </section>
+
+  </main> 
 
   <footer>
     <p>Projet d'analyse de signatures mutationnelles</p>
